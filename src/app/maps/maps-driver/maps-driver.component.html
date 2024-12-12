@@ -1,0 +1,44 @@
+
+<ion-content  [fullscreen]="true" >
+  <div class="maps-container">
+    <ion-icon (click)="navigate()" name="arrow-back-outline"></ion-icon>
+    <capacitor-google-map #map></capacitor-google-map>
+  </div>
+  <div class="ion-padding container">
+    <ion-label class="d-flex-between">
+      <h1>Ruta de Hoy!</h1>
+      <ion-button size="small" color="secondary" fill="outline">Iniciar Ruta</ion-button>
+    </ion-label>
+    
+    <div  class="wrapper">
+      <div class="item-wrapper">
+        <div class="icon-cont">
+          <ion-icon name="list-outline"></ion-icon>
+        </div>
+        <div class="ion-activatable ripple-parent rounded-rectangle green-bg">
+          <p class="text-option">Lista de Estudiantes</p>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </div>
+      <div class="item-wrapper">
+        <div class="icon-cont">
+          <ion-icon name="alert-circle-outline"></ion-icon>
+        </div>
+        <div class="ion-activatable ripple-parent rounded-rectangle green-bg">
+          <p class="text-option">Notificar excepcion</p>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </div>
+      <div class="item-wrapper">
+        <div class="icon-cont">
+          <ion-icon name="navigate-outline"></ion-icon>
+        </div>
+        <div class="ion-activatable ripple-parent rounded-rectangle green-bg">
+          <p class="text-option">Centrar Ubicacion</p>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

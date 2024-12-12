@@ -1,0 +1,226 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-header class="d-flex-between">
+    <ion-label>
+      <p>Hola, {{user.name}}</p>
+      <h1>Buenos dias!</h1>
+    </ion-label>
+    <ion-avatar  (click)="presentClosePopover($event)" style="cursor: pointer;" class="icon-profile" *ngIf="userProfile">
+      <img alt="Imagen" [src]="userProfile" />
+    </ion-avatar>
+    <ion-popover  #popover triggerAction="hover" (didDismiss)="isClosePopoverOpen = false" [isOpen]="isClosePopoverOpen">
+      <ng-template>
+        <ion-content style="cursor: pointer;" class="ion-padding" (click)="closeSession()">Cerrar sesion!</ion-content>
+      </ng-template>
+    </ion-popover>
+  </ion-header>
+
+  <div class="wrapper" *ngIf="!IsDriver">
+    <div class="ion-activatable ripple-parent rounded-rectangle main-card" (click)="navigate('maps')">
+      <ion-card  class="d-flex-between">
+        <div class="card-content">
+          <div class="images-card">
+            <img src="../../assets/bus.gif" alt="" class="mr-6">
+            <img src="../../assets/fast-forward (1).gif" class="arrow-icon mr-6" alt="">
+            <img src="../../assets/map.gif" alt=""  class="mr-6">
+            <!-- <img src="../../assets/way.gif" alt=""> -->
+          </div>
+          <ion-card-header>
+            <ion-card-title>Donde Esta el chofer?</ion-card-title>
+            <ion-card-subtitle>Ver la ubicacion actual del chofer</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-icon name="navigate-outline" class="mr-2"></ion-icon>
+            <ion-icon name="person-outline" class="mr-2"></ion-icon>
+            <ion-icon name="location-outline" class="mr-2"></ion-icon>
+          </ion-card-content>
+        </div>
+        <div class="mx-2">
+          <ion-icon aria-hidden="true" name="chevron-forward-outline" slot="end"></ion-icon>
+        </div>
+      </ion-card>
+      <ion-ripple-effect></ion-ripple-effect>
+    </div>
+    <ion-note class="more-options">Mas Opciones</ion-note>
+    <ion-list class="list-items">
+      <ion-col>
+        <div class="ion-activatable ripple-parent rounded-rectangle" (click)="navigate('student')">
+          <ion-card  class="d-flex-between">
+            <div>
+              <div class="d-flex-center">
+                <img src="../../assets/add-user.gif" alt="">
+              </div>
+              <ion-card-header>
+                <!-- <ion-card-title>Agregar Estudiante </ion-card-title> -->
+                <ion-card-subtitle>Agrega un estudiante</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content class="d-flex-between">
+                <ion-icon name="person-add-outline"></ion-icon>
+                <ion-icon name="book-outline"></ion-icon>
+                <ion-icon name="navigate-outline"></ion-icon>
+              </ion-card-content>
+            </div>
+          </ion-card>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+        <div class="ion-activatable ripple-parent rounded-rectangle" (click)="navigate('state')">
+          <ion-card  class="d-flex-between">
+            <div>
+              <div class="d-flex-center">
+                <img src="../../assets/add-user.gif" alt="">
+              </div>
+              <ion-card-header>
+                <!-- <ion-card-title>Agregar Estudiante </ion-card-title> -->
+                <ion-card-subtitle>Agrega Estado</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content class="d-flex-between">
+                <ion-icon name="person-add-outline"></ion-icon>
+                <ion-icon name="book-outline"></ion-icon>
+                <ion-icon name="navigate-outline"></ion-icon>
+              </ion-card-content>
+            </div>
+          </ion-card>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+
+        <div class="ion-activatable ripple-parent rounded-rectangle" (click)="navigate('category')">
+          <ion-card  class="d-flex-between">
+            <div>
+              <div class="d-flex-center">
+                <img src="../../assets/add-user.gif" alt="">
+              </div>
+              <ion-card-header>
+                <!-- <ion-card-title>Agregar Estudiante </ion-card-title> -->
+                <ion-card-subtitle>Agrega Categorias</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content class="d-flex-between">
+                <ion-icon name="person-add-outline"></ion-icon>
+                <ion-icon name="book-outline"></ion-icon>
+                <ion-icon name="navigate-outline"></ion-icon>
+              </ion-card-content>
+            </div>
+          </ion-card>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div class="ion-activatable ripple-parent rounded-rectangle" (click)="navigate('student/list')">
+          <ion-card  class="d-flex-between">
+            <div>
+              <div class="d-flex-center">
+                <img src="../../assets/user.gif" alt="">
+              </div>
+              <ion-card-header>
+                <!-- <ion-card-title>Lista de Estudiantes </ion-card-title> -->
+                <ion-card-subtitle>Ver lista de estudiantes</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content class="d-flex-between">
+                <ion-icon name="list-outline"></ion-icon>
+                <ion-icon name="people-outline"></ion-icon>
+                <ion-icon name="book-outline"></ion-icon>
+              </ion-card-content>
+            </div>
+          </ion-card>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+
+        <div class="ion-activatable ripple-parent rounded-rectangle" (click)="navigate('state/list')">
+          <ion-card  class="d-flex-between">
+            <div>
+              <div class="d-flex-center">
+                <img src="../../assets/user.gif" alt="">
+              </div>
+              <ion-card-header>
+                <!-- <ion-card-title>Lista de Estudiantes </ion-card-title> -->
+                <ion-card-subtitle>Ver lista de Estados</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content class="d-flex-between">
+                <ion-icon name="list-outline"></ion-icon>
+                <ion-icon name="people-outline"></ion-icon>
+                <ion-icon name="book-outline"></ion-icon>
+              </ion-card-content>
+            </div>
+          </ion-card>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+
+        <div class="ion-activatable ripple-parent rounded-rectangle" (click)="navigate('category/list-categories')">
+          <ion-card  class="d-flex-between">
+            <div>
+              <div class="d-flex-center">
+                <img src="../../assets/user.gif" alt="">
+              </div>
+              <ion-card-header>
+                <!-- <ion-card-title>Lista de Estudiantes </ion-card-title> -->
+                <ion-card-subtitle>Ver lista de Categorias</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content class="d-flex-between">
+                <ion-icon name="list-outline"></ion-icon>
+                <ion-icon name="people-outline"></ion-icon>
+                <ion-icon name="book-outline"></ion-icon>
+              </ion-card-content>
+            </div>
+          </ion-card>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </ion-col>
+    </ion-list>
+
+  </div>
+
+  <div class="wrapper" *ngIf="IsDriver">
+    <div class="ion-activatable ripple-parent rounded-rectangle main-card" (click)="navigate('maps')">
+      <ion-card  class="d-flex-between">
+        <div class="card-content">
+          <div class="images-card">
+            <img src="../../assets/bus.gif" alt="">
+            <img src="../../assets/fast-forward (1).gif" class="arrow-icon" alt="">
+            <img src="../../assets/map.gif" alt="">
+            <!-- <img src="../../assets/way.gif" alt=""> -->
+          </div>
+          <ion-card-header>
+            <ion-card-title>Iniciar / Ver Ruta de Hoy</ion-card-title>
+            <ion-card-subtitle>Lista de ubicaciones para hoy</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-icon name="navigate-outline"></ion-icon>
+            <ion-icon name="person-outline"></ion-icon>
+            <ion-icon name="location-outline"></ion-icon>
+          </ion-card-content>
+        </div>
+        <div class="mx-1">
+          <ion-icon aria-hidden="true" name="chevron-forward-outline" slot="end"></ion-icon>
+        </div>
+      </ion-card>
+      <ion-ripple-effect></ion-ripple-effect>
+    </div>
+    <ion-note class="more-options">Mas Opciones</ion-note>
+    <ion-list class="list-items">
+      <ion-col size="6">
+        <div class="ion-activatable ripple-parent rounded-rectangle" (click)="navigate('student/list')">
+          <ion-card  class="d-flex-between">
+            <div>
+              <div class="d-flex-center">
+                <img src="../../assets/user.gif" alt="">
+              </div>
+              <ion-card-header>
+                <!-- <ion-card-title>Lista de Estudiantes </ion-card-title> -->
+                <ion-card-subtitle>Ver lista de estudiantes</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-icon name="list-outline"></ion-icon>
+                <ion-icon name="people-outline"></ion-icon>
+                <ion-icon name="book-outline"></ion-icon>
+              </ion-card-content>
+            </div>
+          </ion-card>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </ion-col>
+    </ion-list>
+
+  </div>
+
+</ion-content>
+

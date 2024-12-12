@@ -1,0 +1,75 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button default-href="#"></ion-back-button>
+  </ion-buttons>
+  <ion-title>Lista de estudiantes</ion-title>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-label>
+    <p class="sub-title">Ordenar Ruta / Ver Estudiante</p>
+  </ion-label>
+  <ion-list>
+    <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h3>Pedro Martinez</h3>
+          <p>18 Años</p>
+        </ion-label>
+        <ion-icon slot="end" name="eye-outline"></ion-icon>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+  
+      <ion-item>
+        <ion-avatar slot="start">
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h3>Juan Jose</h3>
+          <p>14 Años</p>
+        </ion-label>
+        <ion-icon slot="end" name="eye-outline"></ion-icon>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h3>Emy Soto</h3>
+          <p>12 Años</p>
+        </ion-label>
+        <ion-icon slot="end" name="eye-outline"></ion-icon>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h3>Luis Rodriguez</h3>
+          <p>32 Años</p>
+        </ion-label>
+        <ion-icon slot="end" name="eye-outline"></ion-icon>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h3>Pedro</h3>
+          <p>21 Años</p>
+        </ion-label>
+        <ion-icon slot="end" name="eye-outline"></ion-icon>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,44 @@
+
+<ion-content  [fullscreen]="true" >
+  <div class="maps-container">
+    <ion-icon (click)="navigate()" name="arrow-back-outline"></ion-icon>
+    <capacitor-google-map #map></capacitor-google-map>
+  </div>
+  <div class="ion-padding container">
+    <ion-label>
+      <h1>Chofer en Camino!</h1>
+      <p>Juan Martinez se encuentra en camino</p>
+    </ion-label>
+    
+    <div  class="wrapper">
+      <div class="item-wrapper">
+        <div class="icon-cont">
+          <ion-icon name="call-outline"></ion-icon>
+        </div>
+        <div class="ion-activatable ripple-parent rounded-rectangle green-bg">
+          <p class="text-option">Llamar Chofer</p>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </div>
+      <div class="item-wrapper">
+        <div class="icon-cont">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </div>
+        <div class="ion-activatable ripple-parent rounded-rectangle green-bg">
+          <p class="text-option">Enviar Mensaje</p>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </div>
+      <div class="item-wrapper">
+        <div class="icon-cont">
+          <ion-icon name="navigate-outline"></ion-icon>
+        </div>
+        <div class="ion-activatable ripple-parent rounded-rectangle green-bg">
+          <p class="text-option">Ver Ubicacion</p>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-content class="ion-padding">
+  <div class="main-img">
+    <img src="../../../assets/bus-stop.png" alt="">
+  </div>
+  <ion-label class="">
+    <h1 class="mx-3">Registrese</h1>
+    <p class="mx-3">Registrese para iniciar sesion</p>
+  </ion-label>
+  <ion-list>
+    <ion-item class="mb">
+      <ion-input labelPlacement="stacked" label="Nombre" placeholder="Introduzca su nombre">
+        <ion-icon slot="start" name="person-outline" aria-hidden="true"></ion-icon>
+      </ion-input>
+    </ion-item>
+    <ion-item class="mb">
+      <ion-input labelPlacement="stacked" label="Telefono" placeholder="Introduzca su telefono">
+        <ion-icon slot="start" name="call-outline" aria-hidden="true"></ion-icon>
+      </ion-input>
+    </ion-item>
+    <ion-item class="mb">
+      <ion-input labelPlacement="stacked" label="Password" placeholder="********">
+        <ion-icon slot="start" name="lock-closed-outline" aria-hidden="true"></ion-icon>
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+    </ion-item>
+</ion-list>
+  <div class="mb">
+    <ion-button expand="block">Registrarme</ion-button>
+  </div>
+  <ion-label class="item">
+    <p class="text-center" (click)="navigate()">Ya tienes una cuenta? <b>Inicia sesion</b></p>
+  </ion-label>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Actualizar Categoría</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+ <ion-content>
+  <!--<form [formGroup]="updateCategoryForm" (ngSubmit)="updateCategory()">
+    <ion-item>
+      <ion-label position="stacked">Nombre de Categoría</ion-label>
+      <ion-input formControlName="name" type="text"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="updateCategoryForm.get('name')?.hasError('required') && updateCategoryForm.get('name')?.touched">
+      El nombre de la categoría es obligatorio.
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="stacked">Seleccionar Categoría Padre</ion-label>
+      <ion-select [(ngModel)]="selectedSubcategory">
+        <ion-select-option
+          *ngFor="let parentcategory of parentcategories"
+          [value]="parentcategory.name">
+          {{ parentcategory.name }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="updateCategoryForm.invalid">Actualizar</ion-button>
+  </form> -->
+</ion-content>

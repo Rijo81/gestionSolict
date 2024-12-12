@@ -1,0 +1,11 @@
+@charset "UTF-8";
+:root {
+  --ion-color-primary: #3e4c7d;
+  /* Aquí puedes poner el color que desees */
+  --ion-color-primary-rgb: 255, 87, 51;
+  --ion-color-primary-contrast: #ffffff;
+}
+
+.item-inner {
+  padding: 0px !important;
+}/*# sourceMappingURL=variables.css.map */

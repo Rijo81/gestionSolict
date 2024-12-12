@@ -1,0 +1,20 @@
+<ion-header *ngIf="showHeader">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button color="medium" (click)="cancel()">Cerrar</ion-button>
+        </ion-buttons>
+        <ion-title>Imagenes</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding" >
+    <ion-list *ngIf="additionalTexts.length > 0">
+      <ion-item *ngFor="let text of additionalTexts">
+        <ion-label>{{text}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <swiper-container [pagination]="true" [loop]="true" autoplay="true" [autoplay]="{ delay: 2000, disableOnInteraction: false }">
+        <swiper-slide *ngFor="let productImage of productFiles" [key]="productImage.id">
+            <ion-img [src]="productImage.url" [alt]="productImage.name"></ion-img>
+        </swiper-slide>
+    </swiper-container>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cancel()" color="medium" >Limpiar y Cerrar</ion-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()"  color="primary" >Seleccionar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <h4>Seleccionar Opcion</h4>
+  <div *ngIf="multiple">
+    <h6>Opciones Seleccionadas</h6>
+    <ion-badge *ngFor="let option of selectedOptions;" (click)="removeOption(option)" color="danger" style="margin: 5px;">{{option.text}} <ion-icon size="medium" name="close-circle-outline"></ion-icon></ion-badge>
+  </div>
+  <ion-picker  >
+    <ion-picker-column (ionChange)="onIonChange($event)" >
+      <ion-picker-column-option value="" disabled="true">--</ion-picker-column-option>
+      <ion-picker-column-option *ngFor="let item of data" [value]="item" >{{item.text}}</ion-picker-column-option>
+    </ion-picker-column>
+  </ion-picker>
+  <ion-button expand="block" *ngIf="currentOption && multiple" (click)="addOption()">Agregar {{currentOption.text}}</ion-button>
+
+</ion-content>
